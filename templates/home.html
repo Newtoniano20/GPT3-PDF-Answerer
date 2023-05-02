@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 home">
+    <h1>Context Based Answerer</h1>
+    <br>
+    <form method="post" enctype=multipart/form-data>
+        <label for="content">Question About Content</label>
+        <div class="input-group home">
+            <textarea name="content"
+                  placeholder="Message content"
+                  rows="2"
+                  cols="100"
+                  >{{ request.form['content'] }}</textarea>
+        </div>
+        <br><br>
+        <input type=file name="file">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    {% if result %}
+    <div class="result">{{ result }}</div>
+    {% endif %}
+</div>
+</div>
+</div>
+
+{% endblock %}
